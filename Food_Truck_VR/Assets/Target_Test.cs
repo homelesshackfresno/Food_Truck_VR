@@ -20,6 +20,7 @@ public class Target_Test : MonoBehaviour
     {
         if(other.CompareTag("Interactable"))
         {
+            RoundManager.instance.fedPerson();
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }

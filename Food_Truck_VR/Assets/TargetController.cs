@@ -13,6 +13,10 @@ public class TargetController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(paths.Length == 0)
+        {
+            paths = new Vector3[Random.Range(1, 4)];
+        }
         CreatePath();
         nextLocation = paths[currentPath];
     }
@@ -22,27 +26,31 @@ public class TargetController : MonoBehaviour
     {
        if (transform.position != nextLocation)
         {
+            //Debug.Log("Moving!");
             Move();
         }
 
-       if (transform.position == nextLocation && currentPath < paths.Length)
+       if ((transform.position - nextLocation).magnitude < .2f && currentPath < paths.Length)
         {
-            currentPath++;
-            nextLocation = paths[currentPath];
+            currentPath = (currentPath + 1) % paths.Length;
+            nextLocation = paths[currentPath ];
         }
 
     }
 
     void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, paths[currentPath], moveSpeed);
+        //transform.position = Vector3.MoveTowards(transform.position, paths[currentPath], moveSpeed * Time.deltaTime);
+        Vector3 dir = paths[currentPath] - transform.position;
+        dir.Normalize();
+        transform.Translate(dir * moveSpeed * Time.deltaTime);
     }
 
     void CreatePath()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < paths.Length; i++)
         {
-            Vector3 randomPath = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0f);
+            Vector3 randomPath = new Vector3(Random.Range(-2.0f, 2.0f), 0f, Random.Range(-2.0f, 2.0f));
             Vector3 pos = transform.position;
             paths[i] = randomPath + pos;
         }

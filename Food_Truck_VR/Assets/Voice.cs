@@ -25,7 +25,9 @@ public class Voice : MonoBehaviour
     {
         if (delay <= 0)
         {
-            audio.PlayOneShot(hey, 0.5f);
+            Debug.Log("HEY!");
+            AudioSource.PlayClipAtPoint(hey, this.transform.position);
+            //audio.PlayOneShot(hey, 0.5f);
             delay = 2.2f;
         }
     }
