@@ -6,7 +6,7 @@ public class CubeSpawner : MonoBehaviour
 {
     public Transform[] spawnpoints;
 
-    public GameObject target;
+    public GameObject[] interactables;
 
     private GameObject currentTarget = null;
 
@@ -30,6 +30,6 @@ public class CubeSpawner : MonoBehaviour
     {
         Vector3 pos = spawnpoints[Random.Range(0, spawnpoints.Length - 1)].position;
         Quaternion rot = Quaternion.identity;
-        currentTarget = Instantiate<GameObject>(target, pos, rot);
+        currentTarget = Instantiate<GameObject>(interactables[Random.Range(0,interactables.Length - 1)], pos, rot);
     }
 }

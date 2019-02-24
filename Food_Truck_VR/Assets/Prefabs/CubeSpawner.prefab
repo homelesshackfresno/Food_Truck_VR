@@ -46,7 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoints:
   - {fileID: 2965282065389158646}
-  target: {fileID: 1696203987129722047, guid: 1dc8976c007f6594e89d2c3d7b0747e5, type: 3}
+  interactables:
+  - {fileID: 1440370286686477674, guid: 8ed79982f709662468a7abef4466e830, type: 3}
+  - {fileID: 3587217461157491602, guid: cb055ee73c72f1041a8548f019aa5cd3, type: 3}
+  - {fileID: 504106834, guid: 5282d5160270ac0469127f523bddd23f, type: 3}
+  - {fileID: 208091609644303667, guid: 5463d1b4bffe2a9419d84d7ff9958f4c, type: 3}
+  - {fileID: 9125596492920245645, guid: 2fb1017a41f89b742bed4bfba849c3d4, type: 3}
+  - {fileID: 2931486845711252552, guid: 5beeaa3397dc8eb4986ad80c1d408e03, type: 3}
+  - {fileID: 1563555830919199395, guid: 4c82c9d9740aade4fbe562f9990e40cb, type: 3}
+  - {fileID: 6850112699479487984, guid: 8701eaa8219433949a52627c44f89792, type: 3}
+  - {fileID: 1454643160081245109, guid: a8967d4ea33a4fc439c8a4bc66864c86, type: 3}
 --- !u!1 &2965282065389158647
 GameObject:
   m_ObjectHideFlags: 0
