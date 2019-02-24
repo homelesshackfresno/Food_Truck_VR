@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zach's_Test_Scene.unity
     guid: 6c311ec837030e24fb2b32826e0a8afe
+  - enabled: 1
+    path: Assets/Scenes/Justin_Test.unity
+    guid: 09e5c64663370d54282d45411a37abce
   m_configObjects: {}
