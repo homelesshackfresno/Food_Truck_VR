@@ -28,6 +28,8 @@ public class CubeSpawner : MonoBehaviour
 
     void Spawn()
     {
-        currentTarget = Instantiate<GameObject>(target, spawnpoints[Random.Range(0, spawnpoints.Length - 1)]);
+        Vector3 pos = spawnpoints[Random.Range(0, spawnpoints.Length - 1)].position;
+        Quaternion rot = Quaternion.identity;
+        currentTarget = Instantiate<GameObject>(target, pos, rot);
     }
 }
