@@ -236,5 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hey: {fileID: 8300000, guid: 4fa8028478a2c054383f414407161132, type: 3}
+  hurt:
+  - {fileID: 8300000, guid: 05ecdd2cb484d1b48a1a0c8b6d712488, type: 3}
+  - {fileID: 8300000, guid: c67bb4c35c76b0c448cb640580c1df00, type: 3}
+  - {fileID: 8300000, guid: 9d1dd795a639ea44ba6b407862145d58, type: 3}
   audio: {fileID: 3471242089898932978}
-  delay: 2.2
+  delay: 2.6
