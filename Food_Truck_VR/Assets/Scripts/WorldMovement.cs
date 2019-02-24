@@ -14,7 +14,7 @@ public class WorldMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        body.velocity = new Vector3(0, 0, -16);
+        body.velocity = new Vector3(0, 0, -4);
         
     }
 }
