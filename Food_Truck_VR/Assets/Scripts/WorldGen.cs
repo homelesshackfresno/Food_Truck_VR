@@ -19,7 +19,7 @@ public class WorldGen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float TimeDelay = 32f / 2f;
+        float TimeDelay = 32f / 16f;
         timeElapsed = timeElapsed + Time.deltaTime;
         
 
