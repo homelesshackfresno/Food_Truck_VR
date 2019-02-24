@@ -59,7 +59,7 @@ public class TargetController : MonoBehaviour
     void LookAtPath()
     {
         Vector3 dir = paths[currentPath] - transform.position;
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, moveSpeed * time.deltaTime, 0.0f);
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, moveSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDir);
     }
 
