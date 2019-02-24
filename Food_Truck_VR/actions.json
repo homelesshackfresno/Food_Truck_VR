@@ -36,6 +36,14 @@
       "requirement": "optional"
     },
     {
+      "name": "/actions/default/in/Nav_Up",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/Nav_Down",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

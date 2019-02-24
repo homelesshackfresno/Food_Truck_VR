@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class RoundManager : MonoBehaviour
 {
     public static RoundManager instance;
+
+    public Canvas endScreen;
+
     private void Awake()
     {
         if(instance != null)
@@ -33,8 +36,6 @@ public class RoundManager : MonoBehaviour
         peopleFed = 0;
         elapseTime = roundTime;
         roundInProgress = true;
-
-
     }
 
     // Update is called once per frame
@@ -43,7 +44,8 @@ public class RoundManager : MonoBehaviour
 
         if (elapseTime <= 0)
         {
-            
+            roundInProgress = false;
+            endScreen.gameObject.SetActive(true);
         }
         else
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class Hand : MonoBehaviour
 
     private SteamVR_Behaviour_Pose pose = null;
     private FixedJoint joint = null;
+
+    private SteamVR_Action_Boolean interactWithUi = null;
+    public SteamVR_Action_Vibration _Out = null;
+
+    public SteamVR_Action_Boolean up = null;
+
+    public SteamVR_Action_Boolean down = null;
 
     private Interactable currentInteractable = null;
     private List<Interactable> contactInteractables = new List<Interactable>();
@@ -39,6 +47,19 @@ public class Hand : MonoBehaviour
             Drop();
         }
 
+        if(up.GetStateDown(pose.inputSource))
+        {
+              Debug.Log("Hit!");
+            RaycastHit hit;
+
+            Ray r = new Ray(this.transform.position, this.transform.up);
+
+            if (Physics.Raycast(r))
+            {
+  
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +68,8 @@ public class Hand : MonoBehaviour
         {
             return;
         }
+        
+        //_Out.
         contactInteractables.Add(other.GetComponent<Interactable>());
     }
 
@@ -121,5 +144,10 @@ public class Hand : MonoBehaviour
         }
 
         return nearest;
+    }
+
+    private void Start()
+    {
+        Debug.Log(up.GetType());
     }
 }
