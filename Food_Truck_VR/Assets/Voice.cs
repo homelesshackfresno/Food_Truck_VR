@@ -6,7 +6,7 @@ public class Voice : MonoBehaviour
 {
     public AudioClip hey;
     public AudioSource audio;
-    public float delay = 1.8f;
+    public float delay = 2.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class Voice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CallOut();
         delay -= Time.deltaTime;
     }
 
@@ -25,8 +26,7 @@ public class Voice : MonoBehaviour
         if (delay <= 0)
         {
             audio.PlayOneShot(hey, 0.5f);
+            delay = 2.2f;
         }
-
-        delay = 1.8f;
     }
 }
