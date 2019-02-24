@@ -34,6 +34,7 @@ public class TargetController : MonoBehaviour
         {
             currentPath = (currentPath + 1) % paths.Length;
             nextLocation = paths[currentPath ];
+            LookAtPath();
         }
 
     }
@@ -53,6 +54,13 @@ public class TargetController : MonoBehaviour
             Vector3 pos = transform.position;
             paths[i] = randomPath + pos;
         }
+    }
+
+    void LookAtPath()
+    {
+        Vector3 dir = paths[currentPath] - transform.position;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, dir, moveSpeed * time.deltaTime, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDir);
     }
 
     void OnCollisionEnter()
