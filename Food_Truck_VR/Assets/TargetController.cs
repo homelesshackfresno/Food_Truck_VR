@@ -54,4 +54,10 @@ public class TargetController : MonoBehaviour
             paths[i] = randomPath + pos;
         }
     }
+
+    void OnCollisionEnter()
+    {
+        currentPath = (currentPath + 1) % paths.Length;
+        nextLocation = paths[currentPath];
+    }
 }
