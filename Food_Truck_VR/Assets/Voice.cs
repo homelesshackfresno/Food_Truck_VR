@@ -36,6 +36,6 @@ public class Voice : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        audio.PlayOneShot(hurt[Random.Range(0, 2)]);
+        AudioSource.PlayClipAtPoint(hurt[Random.Range(0, 2)], transform.position);
     }
 }
