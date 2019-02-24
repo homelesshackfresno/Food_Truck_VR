@@ -40,7 +40,6 @@ public class TargetController : MonoBehaviour
 
     void Move()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, paths[currentPath], moveSpeed * Time.deltaTime);
         Vector3 dir = paths[currentPath] - transform.position;
         dir.Normalize();
         transform.Translate(dir * moveSpeed * Time.deltaTime);
